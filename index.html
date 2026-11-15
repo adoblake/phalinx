@@ -3,7 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#10122f">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#10122f" media="(prefers-color-scheme: dark)">
+  <script>(function(){try{var t=localStorage.getItem('phalinx-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
   <meta name="description" content="Phalinx is a design studio creating thoughtful brand identities and high-impact websites for growing businesses. Branding that feels right. Websites that work hard.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Phalinx — Brand identities & websites with intention">
@@ -34,7 +37,6 @@
         <img class="brand-mark" src="assets/phalinx-mark.png" alt="" width="34" height="34">
         <span>phalinx</span>
       </a>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-links" type="button"><span></span><span></span></button>
       <nav class="primary-links" id="primary-links" aria-label="Primary navigation">
         <a href="#work">Work</a>
         <a href="#services">Services</a>
@@ -43,6 +45,13 @@
         <a href="#about">Studio</a>
         <a href="#contact" class="nav-cta">Start a Conversation</a>
       </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+        </button>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-links" type="button"><span></span><span></span></button>
+      </div>
     </div>
   </header>
 

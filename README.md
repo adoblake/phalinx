@@ -3,6 +3,9 @@
 ## Design update
 Full visual rebuild inspired by modern product-studio sites (Ramotion-style): white canvas, oversized tight grotesk headlines (Inter Tight), large rounded photo cards, a scrolling keyword marquee, numbered principle stats, a dark services list with image thumbnails, soft-grey pricing cards with a dark featured tier, hover-flip process cards, and a dark footer with an oversized wordmark. The peach Phalinx monogram is kept as the accent color. Sections fade up on scroll (disabled for reduced-motion users).
 
+## Light / dark mode
+The site follows the visitor's system setting. A sun/moon button in the header switches modes, and the choice is remembered in that browser (`localStorage` key `phalinx-theme`). Colors live as CSS variables at the top of `styles.css`: the light values in `:root`, the dark values in the `[data-theme="dark"]` block and its matching `prefers-color-scheme` block. Change both dark blocks together.
+
 ## Photography
 Section imagery is hotlinked from Unsplash (images.unsplash.com) under the Unsplash License. If any photo fails to load, its frame falls back to a neutral tone. Before launch, confirm each photo suits the brand, or swap in your own and host them in `assets/`.
 

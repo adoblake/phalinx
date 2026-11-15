@@ -8,6 +8,27 @@ document.querySelectorAll('figure img').forEach(img=>{
   if (img.complete && img.naturalWidth===0 && img.src) fail(); else img.addEventListener('error',fail,{once:true});
 });
 
+// Light/dark mode: follows the system setting until the visitor picks one; the choice is remembered.
+const themeButton=document.querySelector('.theme-toggle');
+const darkQuery=window.matchMedia('(prefers-color-scheme: dark)');
+const currentTheme=()=>document.documentElement.getAttribute('data-theme')||(darkQuery.matches?'dark':'light');
+function syncThemeUI(){
+  const theme=currentTheme();
+  if (themeButton){
+    themeButton.setAttribute('aria-label',theme==='dark'?'Switch to light mode':'Switch to dark mode');
+    themeButton.setAttribute('aria-pressed',String(theme==='dark'));
+  }
+  document.querySelectorAll('meta[name="theme-color"]').forEach(m=>m.setAttribute('content',theme==='dark'?'#10122f':'#ffffff'));
+}
+themeButton?.addEventListener('click',()=>{
+  const next=currentTheme()==='dark'?'light':'dark';
+  document.documentElement.setAttribute('data-theme',next);
+  try{localStorage.setItem('phalinx-theme',next);}catch(e){}
+  syncThemeUI();
+});
+darkQuery.addEventListener?.('change',syncThemeUI);
+syncThemeUI();
+
 // Header gets a hairline once the page scrolls.
 const header=document.querySelector('.site-header');
 const onScroll=()=>header?.classList.toggle('is-scrolled',window.scrollY>8);
