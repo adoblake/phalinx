@@ -1,5 +1,26 @@
 
 'use strict';
+document.documentElement.classList.add('js');
+
+// Remote photos: if one fails, hide it so the frame's soft tone shows instead.
+document.querySelectorAll('figure img').forEach(img=>{
+  const fail=()=>img.classList.add('is-broken');
+  if (img.complete && img.naturalWidth===0 && img.src) fail(); else img.addEventListener('error',fail,{once:true});
+});
+
+// Header gets a hairline once the page scrolls.
+const header=document.querySelector('.site-header');
+const onScroll=()=>header?.classList.toggle('is-scrolled',window.scrollY>8);
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+// Fade-up reveals.
+const reveals=document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window){
+  const io=new IntersectionObserver(entries=>entries.forEach(entry=>{
+    if (entry.isIntersecting){entry.target.classList.add('is-visible');io.unobserve(entry.target);}
+  }),{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  reveals.forEach(el=>io.observe(el));
+} else reveals.forEach(el=>el.classList.add('is-visible'));
 const navButton = document.querySelector('.nav-toggle');
 const nav = document.querySelector('.primary-links');
 if (navButton && nav) {

@@ -1,7 +1,10 @@
-# PHALINX — Information Website 7.0 | Clean Navy Surfaces
+# PHALINX — Information Website 8.0 | Editorial Studio Redesign
 
 ## Design update
-The decorative repeating wave pattern has been fully removed from every website surface. All dark/navy backgrounds are now clean and solid, with the original Phalinx monogram, restrained gold accents, and the existing content layout retained. The two wave image assets have been removed from the package.
+Full visual rebuild inspired by modern product-studio sites (Ramotion-style): white canvas, oversized tight grotesk headlines (Inter Tight), large rounded photo cards, a scrolling keyword marquee, numbered principle stats, a dark services list with image thumbnails, soft-grey pricing cards with a dark featured tier, hover-flip process cards, and a dark footer with an oversized wordmark. The peach Phalinx monogram is kept as the accent color. Sections fade up on scroll (disabled for reduced-motion users).
+
+## Photography
+Section imagery is hotlinked from Unsplash (images.unsplash.com) under the Unsplash License. If any photo fails to load, its frame falls back to a neutral tone. Before launch, confirm each photo suits the brand, or swap in your own and host them in `assets/`.
 
 ## Services (proposed launch prices)
 - Brand Foundations — from $850
