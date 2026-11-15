@@ -16,7 +16,7 @@ Section imagery is hotlinked from Unsplash (images.unsplash.com) under the Unspl
 All links to the inquiry experience launch the same modal form, EXCEPT the header “Start a Conversation” link, which scrolls down to the on-page inquiry section. Package buttons preselect their service. The modal keeps user-entered content when closed and reopened, and supports Escape, close button, outside click, and mobile scrolling.
 
 ## Payments
-The page illustrates paying in full or 50%/25%/25% at project milestones. No payment processor is connected and the site does not offer a loan or subscription. A payment preference field is included in the form.
+The page illustrates paying in full or 50%/25%/25% at project milestones. Payments are taken by Stripe invoices sent after a proposal is signed (one invoice for pay-in-full, or one per milestone); there is no checkout on the site, and it does not offer a loan or subscription. Before launch, enable card and US bank account (ACH) payments for invoices in Stripe settings. A payment preference field is included in the form.
 
 ## Deployment
 This is a static site ready to configure and deploy using Netlify Forms. It is **not live** and the inquiry form is **not yet receiving clients**. Before publishing, approve pricing, service scope, phase-two credit, payment terms, privacy and legal policies. Deploy the extracted folder, configure form submission notifications, then run a real end-to-end test.
