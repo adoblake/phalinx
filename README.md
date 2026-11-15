@@ -19,6 +19,8 @@ All links to the inquiry experience launch the same modal form, EXCEPT the heade
 The page illustrates paying in full or 50%/25%/25% at project milestones. Payments are taken by Stripe invoices sent after a proposal is signed (one invoice for pay-in-full, or one per milestone); there is no checkout on the site, and it does not offer a loan or subscription. Before launch, enable card and US bank account (ACH) payments for invoices in Stripe settings. A payment preference field is included in the form.
 
 ## Deployment
+Production domain: **https://phalinx.space** (canonical and social-preview URLs point here). The `main` branch deploys to production on Netlify.
+
 This is a static site ready to configure and deploy using Netlify Forms. It is **not live** and the inquiry form is **not yet receiving clients**. Before publishing, approve pricing, service scope, phase-two credit, payment terms, privacy and legal policies. Deploy the extracted folder, configure form submission notifications, then run a real end-to-end test.
 
 ## Files
